@@ -1,6 +1,6 @@
 # Initial parameters
 nrSubjects = 1000   # The 'number of subjects' the bisection model tests on
-t_0 = 0.0011        # The starting length of a pulse
+t_0 = 0.011        # The starting length of a pulse
 a = 1.1             # The growth factor of the pulses
 b = 0.015           # Noise influence parameter
   
