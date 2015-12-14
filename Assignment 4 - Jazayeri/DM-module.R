@@ -42,10 +42,3 @@ actr.B <- function(encounters,curtime) {
 		}
 	}
 }
-
-## Calculate the activation per chunk: 
-
-#for (i in letters[1:params$num.chunks]) {
-#  cat("Activation of chunk ",i," is ");
-#  cat(actr.B(get.encounters(DM,i),params$duration),"\n");
-#}

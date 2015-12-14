@@ -16,69 +16,89 @@ priorDist2 = seq(from = 671, to = 1023, by = (1023-671)/10)
 priorDist3 = seq(from = 847, to = 1200, by = (1200-847)/10)
 priorDists = list(priorDist1, priorDist2, priorDist3)
 
-# Data storage
-subjectsPriors = array(NA, dim = c(nrSubjects, length(priorDists), 2)) # per prior distribution a stored mean and sd
-subjectsData = array(NA, dim = c(nrSubjects, length(priorDists), trials))
-
+# The readySetGo experiment
 readySetGo = function(nrSubjects, trials) {
+  subjectsData = array(NA, dim = c(nrSubjects, length(priorDists),2 , trials))
   for(subject in 1:nrSubjects) {
-    # Create the declarative memory of the current subject
-    num.chunks = 1
-    max.num.encounters = 2000
-    DM = create.dm(num.chunks,max.num.encounters)
-    
-    # Temporary storage stuff
-    measuredTimes = array(NA, dim=c(trials))
-    activation = array(NA, dim=c(trials))
-    priors = array(NA, dim=c(trials))
-    
     # For every condition (short, medium, long)
     for(priorDist in 1:length(priorDists)) {
+      # Create the declarative memory of the current subject for the current condition
+      num.chunks = 30 # The max interval is 1200 ms, which amounts to 25 or 26 ticks, so 30 should be enough
+      max.num.encounters = trials
+      DM = create.dm(num.chunks,max.num.encounters)
+      
+      # Temporary storage stuff
+      activation = array(NA, dim=c(num.chunks))
+      priors = array(NA, dim=c(num.chunks))
+      
+      # The current time
       curtime = 0 # Keep track of the time during the experiment, to account for activation decrease
       
       # Perform the trials
       for(trial in 1:trials) {
         # The current sample time
-        t_s = priorDists[[priorDist]][sample(1:11, 1)]
+        sample = sample(1:11, 1)
+        t_s = priorDists[[priorDist]][sample]
+        subjectsData[subject, priorDist, 1, trial] = t_s # store it
         
-        # Measure the sample time
-        t_m = ticksToTime(timeToTicks(t_s)) 
+        # Measure the sample time in an internal representation
+        t_m = timeToTicks(t_s)
         
         # Determine the current time with the values used in the paper for delay time and fixation point duration
         delay = sample(250:850, 1)
-        curtime = curtime + delay + FixPointDuration + t_m # The current time, given that the first trial was at time == 0 ms
+        curtime = curtime + delay + FixPointDuration + t_s # The current time, given that the first trial was at time == 0 ms
         
-        # Add the time the trial takes place as an encounter
-        DM = add.encounter(DM, 1, curtime)
+        # Add the time the trial takes place as an encounter at the t_m ticks index
+        DM = add.encounter(DM, t_m, curtime)
         
-        # Store the measured duration time on the same index as the encounter is added to the DM to link the two
-        measuredTimes[trial] = t_m
-        
-        # Calculate activation values for all encounters so far using the current time and the time of the encounter
-        for(encounter in 1:sum(!is.na(measuredTimes))) {
-          activation[encounter] = actr.B(DM[encounter], curtime)
+        # Calculate activation values for all chunks so far using the current time and the times of the encounters
+        for(chunk in 1:num.chunks) {
+          if(!is.na(DM[chunk][1])) {
+            activation[chunk] = actr.B(DM[chunk], curtime)
+          }
         }
         
         # Calculate the priors with the activations
-        activationSum = sum(activation)
-        for(encounter in 1:sum(!is.na(measuredTimes))) {
-          priors[encounter] = activation[encounter] / activationSum
+        activationSum = sum(activation, na.rm = TRUE)
+        for(chunk in 1:num.chunks) {
+          priors[chunk] = activation[chunk] / activationSum
         }
         
         # Determine the estimated time by multiplying the priors of all encounters with their measured duration
-        subjectsData[subject][priorDist][trial] = sum(na.omit(priors)*na.omit(measuredTimes))
+        subjectsData[subject, priorDist, 2, trial] = ticksToTime(sum(priors*c(1:num.chunks), na.rm = TRUE))
       }
     }
   }
+  subjectsData
 }
 
-readySetGo(nrSubjects, trials)
+data = readySetGo(nrSubjects, trials)
+rownames(data) = "Subj"
 
-# First stage: determine measured time from the sample time:
-# Gaussian: t_measured -> p(t_measured|t_sample) (sd grows linearly with mean)
+## Plot the data
+## ---------------------------------------------------------------------------
 
-# Second stage: determine estimated time from the measured time:
-# t_estimated = f(t_measured)
+brown <- "#8b4513";
+red <- "#ff1100";
+black <- "#000000";
+brownT <- "#8b451322";
+redT <- "#ff110022";
+blackT <- "#00000022";
 
-# Third stage: produce interval from the estimated time:
-# Gaussian: t_produced -> p(t_produced|t_estimated) (sd grows linearly with mean)
+## ---
+
+par(mfrow=c(1,1))
+
+plotDat = aggregate(list(Tp=Tp),list(Ts=Ts,Cond=Cond),mean)
+
+yrange <- range(plotDatJS$Ts)*c(.95,1.05)
+
+plot(data[1,3,1,], data[1,3,2,],type="b",col=red,lwd=2,ylim=yrange,xlim=yrange,main="J&S All")
+lines(data[1,2,1,],data[1,2,2,],type="b",col=brown,lwd=2,ylim=yrange,xlim=yrange)
+lines(data[1,1,1,],data[1,1,2,],type="b",col=black,lwd=2,ylim=yrange,xlim=yrange)
+
+lines(c(yrange[1],yrange[2]),c(yrange[1],yrange[2]),col="darkgrey",lty=2)
+
+points(jitter(data[1,3,1,]),data[1,3,2,],col=redT,pch=".",cex=3)
+points(jitter(data[1,2,1,]),data[1,2,2,],col=brownT,pch=".",cex=3)
+points(jitter(data[1,1,1,]),data[1,1,2,],col=blackT,pch=".",cex=3)
