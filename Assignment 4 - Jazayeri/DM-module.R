@@ -3,8 +3,6 @@
 params <- list()
 params$d <- .5
 
-## ---------------------------------------------------------------------------
-
 ## DM functions
 
 create.dm <- function(chunks,encounters) {
@@ -27,18 +25,16 @@ get.encounters <- function(DM,chunk) {
   tmp[!is.na(tmp)]
 }
 
-## ---------------------------------------------------------------------------
-
 ## Baselevel activation function:
 
 actr.B <- function(encounters,curtime) {
-	if (length(curtime)>1) {
-		sapply(curtime,function(X) { actr.B(encounters,X)})
-	} else {
-		if (curtime < min(encounters)) {
-			return(NA)
-		} else {
-			sum((curtime - encounters[encounters<curtime])^-params$d)
-		}
-	}
+  if (length(curtime)>1) {
+    sapply(curtime,function(X) { actr.B(encounters,X)})
+  } else {
+    if (curtime < min(encounters)) {
+      return(NA)
+    } else {
+      log(sum((curtime - encounters[encounters<curtime])^-params$d))	
+    }
+  }
 }

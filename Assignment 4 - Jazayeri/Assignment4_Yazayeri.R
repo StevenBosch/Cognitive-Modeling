@@ -2,8 +2,9 @@ source("DM-module.R", TRUE)
 source("time.R", TRUE)
 
 # Experiment setup parameters
-nrSubjects = 1   # The 'number of subjects'
-trials = 500 # The total number of trials, it depends on which trials you plot, how many of these you consider as `training' trials
+nrSubjects = 6   # The 'number of subjects'
+trainingTrials = 500 # The number of training trials
+testingTrials = 1000 # The number of testing trials
 
 # Experiment durations, for calculating the activation of the chunks
 FixPointDuration = 1000
@@ -17,14 +18,18 @@ priorDist3 = seq(from = 847, to = 1200, by = (1200-847)/10)
 priorDists = list(priorDist1, priorDist2, priorDist3)
 
 # The readySetGo experiment
-readySetGo = function(nrSubjects, trials) {
-  subjectsData = array(NA, dim = c(nrSubjects, length(priorDists),2 , trials))
+readySetGo = function(nrSubjects, testingTrials, trainingTrials) {
+  subjectsData = data.frame(Sub = integer(nrSubjects*length(priorDists)*testingTrials),
+                   Cond = integer(nrSubjects*length(priorDists)*testingTrials),
+                   Ts=double(nrSubjects*length(priorDists)*testingTrials),
+                   Tp=double(nrSubjects*length(priorDists)*testingTrials))
+  
   for(subject in 1:nrSubjects) {
     # For every condition (short, medium, long)
-    for(priorDist in 1:length(priorDists)) {
+    for(condition in 1:length(priorDists)) {
       # Create the declarative memory of the current subject for the current condition
       num.chunks = 30 # The max interval is 1200 ms, which amounts to 25 or 26 ticks, so 30 should be enough
-      max.num.encounters = trials
+      max.num.encounters = testingTrials + trainingTrials
       DM = create.dm(num.chunks,max.num.encounters)
       
       # Temporary storage stuff
@@ -32,14 +37,12 @@ readySetGo = function(nrSubjects, trials) {
       priors = array(NA, dim=c(num.chunks))
       
       # The current time
-      curtime = 0 # Keep track of the time during the experiment, to account for activation decrease
+      curtime = 0
       
-      # Perform the trials
-      for(trial in 1:trials) {
-        # The current sample time
-        sample = sample(1:11, 1)
-        t_s = priorDists[[priorDist]][sample]
-        subjectsData[subject, priorDist, 1, trial] = t_s # store it
+      # Training stage
+      for(trial in 1:trainingTrials) {
+        # The sample time
+        t_s = priorDists[[condition]][sample(1:11, 1)]
         
         # Measure the sample time in an internal representation
         t_m = timeToTicks(t_s)
@@ -51,32 +54,62 @@ readySetGo = function(nrSubjects, trials) {
         # Add the time the trial takes place as an encounter at the t_m ticks index
         DM = add.encounter(DM, t_m, curtime)
         
-        # Calculate activation values for all chunks so far using the current time and the times of the encounters
+        # Increase the current time by the time of the to be measured sample
+        curtime = curtime + t_s
+      }
+      
+      # Testing stage
+      for(trial in 1:testingTrials) {
+        # The current sample time
+        t_s = priorDists[[condition]][sample(1:11, 1)]
+        
+        # Measure the sample time in an internal representation
+        t_m = timeToTicks(t_s)
+        
+        # Determine the current time with the values used in the paper for delay time and fixation point duration
+        delay = sample(250:850, 1)
+        curtime = curtime + delay + FixPointDuration + t_s # The current time, given that the first trial was at time == 0 ms
+        
+        # Add the time the trial takes place as an encounter at the t_mth index
+        DM = add.encounter(DM, t_m, curtime)
+        
+        # Calculate activation values for all chunks that have encounters using the current time and the times the encounters took place
         for(chunk in 1:num.chunks) {
           if(!is.na(DM[chunk][1])) {
             activation[chunk] = actr.B(DM[chunk], curtime)
           }
         }
-        
+
         # Calculate the priors with the activations
-        activationSum = sum(activation, na.rm = TRUE)
+        activationSum = sum(exp(activation/curtime), na.rm = TRUE)
+
         for(chunk in 1:num.chunks) {
-          priors[chunk] = activation[chunk] / activationSum
+          priors[chunk] = 0.4 * exp(activation[chunk]/curtime) / activationSum
         }
+        # Increase the prior of the current encounter, which is still fresh in memory
+        priors[t_m] = priors[t_m] + 0.6
         
         # Determine the estimated time by multiplying the priors of all encounters with their measured duration
-        subjectsData[subject, priorDist, 2, trial] = ticksToTime(sum(priors*c(1:num.chunks), na.rm = TRUE))
+        # and store the produced duration using ticksToTime
+        t_p = ticksToTime(round(sum(priors*c(1:num.chunks), na.rm = TRUE)))
+        
+        # Increase the current time by the time of the to be measured sample
+        curtime = curtime + t_s
+        
+        # Store everything
+        subjectsData$Sub[trial+(subject-1)*testingTrials*length(priorDists)+(condition-1)*testingTrials] = subject
+        subjectsData$Cond[trial+(subject-1)*testingTrials*length(priorDists)+(condition-1)*testingTrials] = condition
+        subjectsData$Ts[trial+(subject-1)*testingTrials*length(priorDists)+(condition-1)*testingTrials] = t_s
+        subjectsData$Tp[trial+(subject-1)*testingTrials*length(priorDists)+(condition-1)*testingTrials] = t_p
       }
     }
   }
   subjectsData
 }
 
-data = readySetGo(nrSubjects, trials)
-rownames(data) = "Subj"
+data = readySetGo(nrSubjects, testingTrials, trainingTrials)
 
 ## Plot the data
-## ---------------------------------------------------------------------------
 
 brown <- "#8b4513";
 red <- "#ff1100";
@@ -89,16 +122,16 @@ blackT <- "#00000022";
 
 par(mfrow=c(1,1))
 
-plotDat = aggregate(list(Tp=Tp),list(Ts=Ts,Cond=Cond),mean)
+plotDat <- with(data,aggregate(list(Tp=Tp),list(Ts=Ts,Cond=Cond),mean))
 
-yrange <- range(plotDatJS$Ts)*c(.95,1.05)
+yrange <- range(plotDat$Ts)*c(.95,1.05)
 
-plot(data[1,3,1,], data[1,3,2,],type="b",col=red,lwd=2,ylim=yrange,xlim=yrange,main="J&S All")
-lines(data[1,2,1,],data[1,2,2,],type="b",col=brown,lwd=2,ylim=yrange,xlim=yrange)
-lines(data[1,1,1,],data[1,1,2,],type="b",col=black,lwd=2,ylim=yrange,xlim=yrange)
+with(plotDat[plotDat$Cond==3,],plot(Ts,Tp,type="b",col=red,lwd=2,ylim=yrange,xlim=yrange,main="Model data"))
+with(plotDat[plotDat$Cond==2,],lines(Ts,Tp,type="b",col=brown,lwd=2,ylim=yrange,xlim=yrange))
+with(plotDat[plotDat$Cond==1,],lines(Ts,Tp,type="b",col=black,lwd=2,ylim=yrange,xlim=yrange))
 
 lines(c(yrange[1],yrange[2]),c(yrange[1],yrange[2]),col="darkgrey",lty=2)
 
-points(jitter(data[1,3,1,]),data[1,3,2,],col=redT,pch=".",cex=3)
-points(jitter(data[1,2,1,]),data[1,2,2,],col=brownT,pch=".",cex=3)
-points(jitter(data[1,1,1,]),data[1,1,2,],col=blackT,pch=".",cex=3)
+with(data[data$Cond==3,],points(jitter(Ts),Tp,col=redT,pch=".",cex=3))
+with(data[data$Cond==2,],points(jitter(Ts),Tp,col=brownT,pch=".",cex=3))
+with(data[data$Cond==1,],points(jitter(Ts),Tp,col=blackT,pch=".",cex=3))
