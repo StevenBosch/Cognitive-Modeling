@@ -34,5 +34,5 @@ timeToTicks = function(time) {
     measuredTime = measuredTime + pulseLength
     ticks = ticks + 1
   }
-  ticks
+  ticks - 1
 }

@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{listings}
+\lstset{
+	keywords = [1]{if, else, timeToTicks},
+	breaklines = true,
+	frame = single,
+	numbers = left,
+}
+
+\bibliographystyle{plain}
+
+\title{\vspace{-4ex}\LARGE{Cognitive modeling: model setup}}
+\author{\large{Steven Bosch (s1861948)}}
+\date{\vspace{-2ex}}
+
+\begin{document}
+\maketitle
+\paragraph{General outline of the cognitive process}
+The three experiments performed by Los et al. \cite{Los1} showed clear transfer effects of foreperiod distribution over multiple blocks of trials. This indicates that memory traces of earlier timing experiences influence temporal preparation for later timing tasks, as is described by the Multiple trace theory (MTP) developed by Los et al. \cite{Los2}. According to this theory a timing experience during a trial involves the application of inhibition during the foreperiod (the period between a first and second signal), followed by a wave of activation when the second signal is given. MTP uses the concepts of trace formation, which entail that a memory trace is created on each trial, which stores a temporal profile of the experienced levels of inhibition and activation on that trial, and trace expression, which entails that newly created memory traces start contributing to preparation on subsequent trial jointly with memory traces formed on earlier trials. During a trial then, all past memory traces are retrieved which contribute to the preparation in accordance with their stored levels of inhibition or activation, corresponding to that specific moment. Since recent experiences are generally more accessible, MTP also assumes that the contribution of a memory trace to a current preparation is weighted by its recency.
+
+\paragraph{Model setup}
+From the description above we can distinguish a number of aspects that need to be modelled in the cognitive model:
+\begin{itemize}
+	\item Some form of keeping track of time. I will use the timeToTicks function we implemented earlier.
+	\item Inhibition and activation. The paper by Los et al. does not actually describe what these inhibition and activation levels are or how previous memories influence current levels. Therefore in the algorithm I make use of proportions of the kind: $activation + inhibition = 1$.
+	\item Trace formation: the model keeps track of the latest estimate on activation levels, which is a weighted average of the temporal memories stored. It will update the average activation for an amount of ticks according to the following function: $a_{avg} = w_1 * a_{avg} + w_2 * a_{new}$. It will also update the activation levels of the neighbouring amount ticks accordingly, for example by a smaller factor of $a_{new}$.
+	\item Trace expression. The model will make use of all memory traces by using the activation average to determine how active it is at the time of the presentation of the second stimulus. Dependent on this activation level it will have to `wait' a certain amount of time before it presses the button.
+\end{itemize}
+The following pseudo code describes the algorithm I propose to model a subject executing a trial, using the aspects described above:
+\begin{lstlisting}
+if first stimulus is presented:
+	count ticks (using timeToTicks)
+	if second stimulus is presented:
+		retrieve average activation for current amount of ticks
+		if average activation == 1:
+			press button
+		else:
+			wait for the duration of inhibition*constant
+			press button
+	update the average action for every amount of ticks with last trial
+\end{lstlisting}
+Note that the `subject' first needs to learn initial average activation levels by playing practice trials. Also note that the `press button' command, would be some motor function that of course takes a certain amount of time to complete.
+
+\bibliography{mybib}
+\end{document}
