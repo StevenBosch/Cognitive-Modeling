@@ -1,0 +1,169 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Howard%
+\ \BBA {} Eichenbaum%
+}{%
+Howard%
+\ \BBA {} Eichenbaum%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+Howard}
+\APACinsertmetastar {%
+Howard}%
+\begin{APACrefauthors}%
+Howard, M\BPBI C.%
+\BCBT {}\ \BBA {} Eichenbaum, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The hippocampus, time, and memory across scales} {The
+  hippocampus, time, and memory across scales}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Experimental Psychology:
+  General}{142}{}{1211-1230}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Los%
+, Kruijne%
+\BCBL {}\ \BBA {} Meeter%
+}{%
+Los%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Los1}
+\APACinsertmetastar {%
+Los1}%
+\begin{APACrefauthors}%
+Los, S\BPBI A.%
+, Kruijne, W.%
+\BCBL {}\ \BBA {} Meeter, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Outlines of a multiple trace theory of temporal
+  preparation} {Outlines of a multiple trace theory of temporal
+  preparation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Frontiers of Psychology}{5}{1058}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Los%
+, Kruijne%
+\BCBL {}\ \BBA {} Meeter%
+}{%
+Los%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Los2}
+\APACinsertmetastar {%
+Los2}%
+\begin{APACrefauthors}%
+Los, S\BPBI A.%
+, Kruijne, W.%
+\BCBL {}\ \BBA {} Meeter, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Hazard versus History: Temporal Preparation is Driven by
+  Past Experience} {Hazard versus history: Temporal preparation is driven by
+  past experience}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Experimental Psychology: Human Perception
+  and Performance}{}{}{to appear}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nobre%
+, Correa%
+\BCBL {}\ \BBA {} Coull%
+}{%
+Nobre%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2007}}%
+}]{%
+Nobre}
+\APACinsertmetastar {%
+Nobre}%
+\begin{APACrefauthors}%
+Nobre, A\BPBI C.%
+, Correa, A.%
+\BCBL {}\ \BBA {} Coull, J\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The hazards of time} {The hazards of time}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Current Opinion in Neurobiology}{17}{}{465-470}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Taatgen%
+\ \BBA {} van Rijn%
+}{%
+Taatgen%
+\ \BBA {} van Rijn%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Taatgen}
+\APACinsertmetastar {%
+Taatgen}%
+\begin{APACrefauthors}%
+Taatgen, N.%
+\BCBT {}\ \BBA {} van Rijn, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Traces of times past: Representations of temporal
+  intervals in memory} {Traces of times past: Representations of temporal
+  intervals in memory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Memory \& Cognition}{39}{}{1546-1560}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vangkilde%
+, Petersen%
+\BCBL {}\ \BBA {} Bundesen%
+}{%
+Vangkilde%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Vangkilde}
+\APACinsertmetastar {%
+Vangkilde}%
+\begin{APACrefauthors}%
+Vangkilde, S.%
+, Petersen, A.%
+\BCBL {}\ \BBA {} Bundesen, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Temporal expectancy in the context of a theory of visual
+  attention} {Temporal expectancy in the context of a theory of visual
+  attention}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Philosophical Transactions of the Royal Society
+  B}{368}{16}{}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

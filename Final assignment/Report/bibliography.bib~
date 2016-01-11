@@ -1,0 +1,52 @@
+% -----------------------------------------------------------------------
+% Bibliography for final paper cognitive modelling
+% -----------------------------------------------------------------------
+
+@Article{Howard,
+  author =	 {M. C. Howard and H. Eichenbaum},
+  title =	 {The hippocampus, time, and memory across scales},
+  journal =	 {Journal of Experimental Psychology: General},
+  year =	 2013,
+  volume =	 142,
+  pages =    {1211-1230}
+}
+
+@Article{Los1,
+  author =	 {S. A. Los and W. Kruijne and M. Meeter},
+  title =	 {Outlines of a multiple trace theory of temporal preparation},
+  journal =	 {Frontiers of Psychology},
+  year =	 2014,
+  volume =	 5,
+  number =   1058
+}
+
+@Article{Nobre,
+  author =	 {A. C. Nobre and A. Correa and J. T. Coull},
+  title =	 {The hazards of time},
+  journal =	 {Current Opinion in Neurobiology},
+  year =	 2007,
+  volume =	 17,
+  pages =	 {465-470}
+}
+
+@Article{Taatgen,
+  author =	 {N. Taatgen and H. van Rijn},
+  title =	 {Traces of times past: Representations of temporal intervals in memory},
+  journal =	 {Memory \& Cognition},
+  year =	 2011,
+  volume =	 39,
+  pages =    {1546-1560}
+}
+
+@Article{Vangkilde,
+  author =	 {S. Vangkilde and A. Petersen and C. Bundesen},
+  title =	 {Temporal expectancy in the context of a theory of visual attention},
+  journal =	 {Philosophical Transactions of the Royal Society B},
+  year =	 2013,
+  volume =	 368,
+  number =   16
+}
+
+% -----------------------------------------------------------------------
+% Document End
+% -----------------------------------------------------------------------

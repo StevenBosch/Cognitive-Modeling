@@ -1,0 +1,47 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{cogsci}
+\usepackage{pslatex}
+\usepackage{apacite}
+
+
+\title{Unspecified}
+ 
+\author{{\large \bf Steven Bosch (s1861948)} \\
+  Faculty of Mathematics and Natural Sciences}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Blabla
+
+\textbf{Keywords:} 
+temporal preparation; cue target interval timing; Hazard function; long term memory
+\end{abstract}
+
+\section{Introduction}
+The human brain has many traits that we are hardly aware of during our everyday lives, even though these traits have a great impact on our experiences and actions. One such trait is the ability of cue target interval timing. Both consciously and unconsciously this ability is exercised in numerous situations, such as waiting for traffic lights, expecting a sound when something falls or simply expecting the second hand of a clock to move to the next second. What are the cognitive mechanisms behind this ability?
+
+One theory encompasses the \textit{Hazard function}. This function describes that the conditional probability of the occurrence of a target event after the presentation of a cue increases over time given that the event has not yet occurred. While this function has been successfully used to predict interval timing behaviour \cite{Nobre, Vangkilde}, it does not provide an explanation as to the cognitive processes behind it. Moreover it does not take into account memory traces of preceding timing experiences. The past years research began on this basis \cite{Los1, Howard, Taatgen}. \citet{Los1} developed what they called the \textit{multiple trace theory of temporal preparation} (MTP), in which every new trial causes a memory trace to be created, storing a temporal profile of that trial.This memory trace subsequently contributes to the preparation of subsequent trials. 
+
+
+\section{Experiment}
+\subsection{Method}
+\subsection{Results}
+
+\section{Model}
+\subsection{Method}
+\subsection{Results}
+
+\section{Discussion}
+
+
+
+\bibliographystyle{apacite}
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+\bibliography{bibliography}
+
+\end{document}
