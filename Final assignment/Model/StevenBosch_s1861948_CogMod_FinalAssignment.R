@@ -74,7 +74,7 @@ for(group in 1:nrGroups){
       
       for(trial in 1:nrTrials){
         ticks = timeToTicks(distribution[trial])
-        reactionTime = basePenalty - exp(-10/((ticks-10)^2))* 200
+        reactionTime = basePenalty - exp(-10/((ticks/4)^2))* 220
         
         # Store the trial
         index = (group-1)*nrSubjects*nrBlocks*nrTrials + (subject-1)*nrBlocks*nrTrials + (block-1)*nrTrials + trial
