@@ -110,11 +110,11 @@ for(group in 1:nrGroups){
         
         # Calculate the reaction time based on a base Reaction time and the extra time depending
         # on how "prepared" the subject is
-        if (priorShort < 0.42) {
-          reactionTime = baseRT + exp(-ticks^2.7/2400) * 150
-        } else if (priorShort < 0.58) {
+        if (priorShort < 0.33) {
+          reactionTime = baseRT + exp(-ticks^2.6/2400) * 150
+        } else if (priorShort < 0.60) {
           reactionTime = baseRT + exp(-ticks^2/200) * 150
-        } else reactionTime = baseRT + exp(-ticks^0.5/1.7) * 150
+        } else reactionTime = baseRT + exp(-ticks) * 150
         
         # Update the current time with the reaction time and the standard interval
         curtime = curtime + (reactionTime + 1500)/1000
