@@ -35,10 +35,11 @@ actr.B <- function(encounters,curtime) {
 	if (length(curtime)>1) {
 		sapply(curtime,function(X) { actr.B(encounters,X)})
 	} else {
-		if (curtime < min(encounters)) {
+		if (curtime < min(encounters, na.rm = TRUE)) {
+		  print("curtime is smaller than min(encounters)")
 			return(NA)
 		} else {
-			log(sum((curtime - encounters[encounters<curtime])^-params$d))	
+			log(sum((curtime - encounters[encounters<curtime])^-params$d, na.rm = TRUE))
 		}
 	}
 }
