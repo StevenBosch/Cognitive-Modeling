@@ -1,14 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.2)  11 JAN 2016 18:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  30 JAN 2016 22:20
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **StevenBosch(s1861948)_FinalAssignment_CogMod.tex
-(./StevenBosch(s1861948)_FinalAssignment_CogMod.tex
+
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
+tevenBosch(s1861948)_FinalAssignment_CogMod.tex"
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 35 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,9 +31,11 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./cogsci.sty
+)
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\c
+ogsci.sty"
 Conference Style for COGSCI -- last modified October 24, 2006
-) (/usr/share/texlive/texmf-dist/tex/latex/pslatex/pslatex.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\pslatex\pslatex.sty"
 Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -58,7 +69,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
-) (./apacite.sty
+)
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\a
+pacite.sty"
 Package: apacite 2012/02/25 v6.01 APA citation
 \c@BibCnt=\count87
 \bibleftmargin=\skip43
@@ -66,9 +79,40 @@ Package: apacite 2012/02/25 v6.01 APA citation
 \bibparsep=\skip45
 \bibitemsep=\skip46
 \biblabelsep=\skip47
-) (./StevenBosch(s1861948)_FinalAssignment_CogMod.aux)
-\openout1 = `StevenBosch(s1861948)_FinalAssignment_CogMod.aux'.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
+tevenBosch(s1861948)_FinalAssignment_CogMod.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
@@ -79,7 +123,7 @@ LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 14.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 14
 .
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspzccm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    ... okay on input line 14.
@@ -87,31 +131,44 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
-\c@maskedRefs=\count88
+\c@maskedRefs=\count89
 
-(/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
+("C:\Program Files\MiKTeX 2.9\tex\latex\apacite\english.apc"
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
+)
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count90
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen106
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks16
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
 LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 15
 .
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptmcm.fd"
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 15
 .
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptmcm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptmcm.fd"
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+psycm on input line 15
 .
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxpsycm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxpsycm.fd"
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
@@ -127,32 +184,40 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
 
-(./StevenBosch(s1861948)_FinalAssignment_CogMod.bbl
-Underfull \vbox (badness 5189) has occurred while \output is active []
+<5blocks2.png, id=1, 547.04375pt x 597.23125pt>
+File: 5blocks2.png Graphic file (type png)
+ <use 5blocks2.png>
+Package pdftex.def Info: 5blocks2.png used on input line 44.
+(pdftex.def)             Requested size: 243.91125pt x 266.29106pt.
 
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
+tevenBosch(s1861948)_FinalAssignment_CogMod.bbl" [1{C:/ProgramData/MiKTeX/2.9/p
+dftex/config/pdftex.map}
 
 
+
+ <C:/Users/Steven/Documents/GitHub/Cognitive-Modeling/Final assignment/Report/5
+blocks2.png>]) [2
 
 ]
-(./StevenBosch(s1861948)_FinalAssignment_CogMod.aux) ) 
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
+tevenBosch(s1861948)_FinalAssignment_CogMod.aux") ) 
 Here is how much of TeX's memory you used:
- 946 strings out of 493917
- 12088 string characters out of 6157789
- 69282 words of memory out of 5000000
- 4245 multiletter control sequences out of 15000+600000
- 25100 words of font info for 49 fonts, out of 8000000 for 9000
- 788 hyphenation exceptions out of 8191
- 25i,9n,21p,950b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf
--dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (1 page, 495
-62 bytes).
+ 1849 strings out of 493921
+ 25203 string characters out of 3147279
+ 79560 words of memory out of 3000000
+ 5148 multiletter control sequences out of 15000+200000
+ 25100 words of font info for 49 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,9n,21p,950b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9
+/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (2 pages, 60
+546 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

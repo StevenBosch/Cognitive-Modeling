@@ -145,7 +145,7 @@ blackT <- "#00000022";
 ## ---
 
 #par(mfrow=c(2,4))
-par(mfrow=c(1,5))
+par(mfrow=c(2,3))
 
 plotDat <- with(data,aggregate(list(reactionTime=reactionTime),list(forePeriod=forePeriod, group=group, block=block),mean))
 
@@ -155,7 +155,11 @@ xrange <- range(300, 1700)
 for(block in 1:nrBlocks){
   title = paste("Block ", block)
   plotDatTemp = plotDat[plotDat$block==block,]
-  with(plotDatTemp[plotDatTemp$group==1,],plot(forePeriod,reactionTime,type="b",col=red,lwd=2,ylim=yrange,xlim=xrange,main=paste(title)))
-  with(plotDatTemp[plotDatTemp$group==2,],lines(forePeriod,reactionTime,type="b",col=brown,lwd=2,ylim=yrange,xlim=xrange))
-  with(plotDatTemp[plotDatTemp$group==3,],lines(forePeriod,reactionTime,type="b",col=black,lwd=2,ylim=yrange,xlim=xrange))
+  with(plotDatTemp[plotDatTemp$group==1,],plot(forePeriod,reactionTime,type="b",col=red,lwd=2, pch = 15, ylim=yrange,xlim=xrange,main=paste(title)))
+  with(plotDatTemp[plotDatTemp$group==2,],lines(forePeriod,reactionTime,type="b",col=black,lwd=2, pch = 17, ylim=yrange,xlim=xrange))
+  legend("topleft", legend = c("Group 1", "Group 2"), col = c("red", "black"), lwd=1, 
+         pch=c(15,17))
+  #with(plotDatTemp[plotDatTemp$group==3,],lines(forePeriod,reactionTime,type="b",col=brown,lwd=2,ylim=yrange,xlim=xrange))
 }
+
+       
