@@ -21,12 +21,15 @@ uniform = c(30, 30, 30, 30)
 exp = c(64, 32, 16, 8)
 antiExp = c(8, 16, 32, 64)
 distributions = array(NA, c(nrGroups, nrBlocks))
+
+# Distributions for 2 groups of 2 blocks
+distributions[1,] = c("uni", "exp,", "exp", "uni", "uni")
+distributions[2,] = c("uni", "anti-exp", "anti-exp", "uni", "uni")
+
+# Distributions for 3 groups of 8 blocks
 #distributions[1,] = c("uni", "exp,", "exp", "uni", "anti-exp", "uni", "anti_exp", "uni")
 #distributions[2,] = c("uni", "anti-exp", "anti-exp", "uni", "exp", "uni", "exp", "uni")
 #distributions[3,] = c("uni", "uni", "uni", "uni", "uni", "uni", "uni", "uni")
-
-distributions[1,] = c("uni", "exp,", "exp", "uni", "uni")
-distributions[2,] = c("uni", "anti-exp", "anti-exp", "uni", "uni")
 
 # Data storage
 subjectsData = data.frame(group = integer(nrGroups*nrSubjects*nrBlocks*nrTrials),
