@@ -51,9 +51,11 @@ In the experiment the participants were informed every block about their mean re
 \end{table}
 
 \subsection{Results}
-Figure \ref{LosFigure} shows the results of Los et al.'s experiment. The figure shows that for the first uniform distribution, when the participants do not have any prior experience with the experiment yet, their mean RT fore a foreperiod of 400 ms is around 360 ms. It decreases exponentially to around 320 ms for a foreperiod of 1600. In blocks 2 and 3 we see a clear difference between the exponential and anti-exponential distribution. The mean RT for the exponential group decreases greatly for shorter foreperiods to almost the same level of the longer foreperiods, while the opposite happens for the anti-exponential group: the mean RTs increase, most of all for the shorter foreperiods. In the final two blocks we can still see slight remnants of the preceding distributions, with slight differences being there between the two groups of participants.
+Figure \ref{LosFigure} shows the results of Los et al.'s experiment. Los et al. themselves applied a mixed Analysis of Variance (ANOVA) on the data of each block, with group and foreperiod as factors. They report a strong main effect of foreperiod in all blocks, minimal $F (1, 62) = 58.63$ and $p < 0.001$. Furthermore they reported a significant main effect of group in block 2, $F (1, 62) = 13.81$, $p < 0.001$ and 3, $F(1, 62) = 13.95$, $p < 0.001$, but not in the other blocks. The interaction between group and foreperiod was not significant in block 1, $F(1, 62) < 1$, but it was in the other four blocks, with blocks 2 and 3 having minimal $F (1, 62) = 69.64$, $p < 0.001$, and blocks 4 and 5 having minimal $F (1, 62) = 13.12$ and $p \leq 0.001$.
 
-As discussed in the introduction, it appears the cognitive process of cue target interval timing involves more than just the hazard function. Indeed, otherwise there would have been no difference between the mean RTs of different foreperiod distributions.
+Figure \ref{LosFigure} shows that for the first uniform distribution, when the participants do not have any prior experience with the experiment yet, their mean RT fore a foreperiod of 400 ms is around 360 ms. It decreases exponentially to around 320 ms for a foreperiod of 1600. In blocks 2 and 3 we see a clear difference between the exponential and anti-exponential distribution. The mean RT for the exponential group decreases greatly for shorter foreperiods, while the opposite happens for the anti-exponential group: the mean RT increases especially for the shorter foreperiods. In the final two blocks we can still see slight remnants of the preceding distributions, with slight differences between the two groups of participants (as discussed the interactino between group and foreperiod was significant in these blocks as well).
+
+As discussed in the introduction, from these results it appears that the cognitive process of cue target interval timing involves more than just the hazard function. Indeed, otherwise there would have been no difference between the mean RTs of the different blocks. The results of this experiment clearly showed that the distribution of foreperiods does affect the anticipation of the second stimulus. When many short stimuli have appeared in the recent experiences of a participant, he will be more prone to react faster after a short foreperiod. Similarly when many long stimuli have appeared in his recent experiences, the response time is longer for all foreperiods, but especially for the shorter ones. This observation brings us to the cognitive model this study discusses.
 
 \begin{figure}
 	\centering
@@ -64,8 +66,18 @@ As discussed in the introduction, it appears the cognitive process of cue target
 
 \section{Model}
 \subsection{Method}
-\subsection{Results}
+There were two main components in cue target interval timing that needed to be modelled, in order for the model to produce the results generated in the experiment:
+\begin{enumerate}
+	\item Some sort of hazard function
+	\item Memory influence on the temporal preparation
+\end{enumerate}
+(1) Is necessary, because the first block in the experiment clearly showed that without memory of past cue target timing experiences, the mean response times decrease logarithmically as the foreperiod becomes longer, down to a certain threshold.\footnote{Note that this study only discusses the time intervals discussed in Los et al.'s paper. Different mechanisms might come into play for shorter or longer intervals.} The Hazard function can be applied here: the longer it takes before the second signal is shown, the higher the probability becomes that it will come at the next millisecond. The fact that the plots show some sort of negative logarithmic function might be the result of a number of things. First, there obviously is a limit to how fast a human being can respond, so it is logical that there is some kind of asymptote the response times approach as the participants become more prepared. Second, a participant cannot expect the experiment to last forever. This makes it logical that the first milliseconds its expectation increases (so its response time decreases) at a higher rate than at a later time.
 
+It is also necessary to address (2), as is discussed in the previous section. From the graphs it appears that memory has a direct influence on 
+
+Now let us discuss both of the implementations.
+
+\paragraph{1. Hazard function}
 
 
 \begin{figure}
