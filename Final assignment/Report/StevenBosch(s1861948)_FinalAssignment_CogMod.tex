@@ -72,7 +72,7 @@ The model consists of a timing and memory function, which were built upon functi
 
 The timing function is modelled by \citet{Taatgen1} as an Act-R module, the `temporal module'.\footnote{Act-R is a cognitive architecture, see http://act-r.psy.cmu.edu/.}. This module models the idea that people internally measure an interval in number of ticks, which are counted with increasingly long intervals. Furthermore the model uses a declarative memory function (DM-module) that is proposed in \citet{Taatgen}, in which memories are stored as encounters of a specific chunk in the declarative memory. Subsequently the activation of every chunk is calculated to determine how `fresh' in memory it is, according to the following function:
 \begin{equation}
-	A(T) = log(\sum_{encs}(t - t_{enc})^{-d}))
+	A(T) = log(\sum_{enc = 0}^{encs}(t - t_{enc})^{-d}))
 \end{equation}
 Here $t$ is the current time, $t_{enc}$ is the time when an encounter of that specific chunk is created and $d$ is a constant.
 
@@ -92,9 +92,9 @@ Finally, one last assumption is made in modelling the hazard function: there is 
 
 The implementation of the Hazard function used in the model is the following:
 \begin{equation}
-	R = R_b + maxDelay * e^{-\frac{ticks^d}{m}}
+	R = R_b + maxDelay * e^{-\frac{ticks^\alpha}{\beta}}
 \end{equation}
-Here $R$ is the response time, $R_b$ the base response, maxDelay the maximum number of milliseconds a response can take, ticks the number of ticks counted during the foreperiod, and $d$ and $m$ parameters that depend on memory (see the next paragraph). This study uses a base response of 320 ms and a maximum delay of 150 ms, meaning that all of the responses fall within 320 and 470 ms. The exponential factor in the function makes sure that a longer foreperiod is always responded to more quickly than a shorter one. It depends on $d$ and $m$ what the magnitude of this difference is.
+Here $R$ is the response time, $R_b$ the base response, maxDelay the maximum number of milliseconds a response can take, ticks the number of ticks counted during the foreperiod, and $\alpha$ and $\beta$ parameters that depend on memory (see the next paragraph). This study uses a base response of 320 ms and a maximum delay of 150 ms, meaning that all of the responses fall within 320 and 470 ms. The exponential factor in the function makes sure that a longer foreperiod is always responded to more quickly than a shorter one. It depends on $\alpha$ and $\beta$ what the magnitude of this difference is.
 
 \paragraph{Memory influence}
 From the results of the Los et al. experiment it appears that memory has a direct influence on the preparation rate for the second signal, so this had to implemented in the model as well. As we saw from the results, with more short intervals in memory a participant was prepared more quickly and responded faster to (primarily the short) intervals, with more long intervals in memory the participant would take longer to be prepared, which not only affected the short intervals, but even the long intervals (see figure \ref{LosFigure}, the graphs of the second and third block). One explanation for this phenomenon is that the participant unconsciously determines the probabilities of a trial being a short or long interval dependent on the distribution of intervals it has in its memory. Dependent on this estimate the participant would either prepare himself for a short interval or `wait a while' before there was a need to prepare himself. 
@@ -102,15 +102,15 @@ From the results of the Los et al. experiment it appears that memory has a direc
 The participants probably did not experience a sense of exact knowledge concerning the distribution of foreperiods in the block they were in, but they probably did have a more general sense of the foreperiods being predominantly shorter or longer in their past experiences. In this model it is assumed that these were the two options, together with `being about equal', that the human cognition assigned to the foreperiod distribution: predominantly short, about equal, or predominantly long.
 This is modelled in the following way. Using the activation of the chunks in the DM-module (as described above), the prior probability of every encountered foreperiod (in `ticks') is calculated, based on all the encounters per foreperiod. Since the foreperiods are converted to ticks, which is a noisy process, multiple chunks can represent the same foreperiod. Using these prior probabilities, a combined probability on all the shorter foreperiod encounters is calculated as:
 \begin{equation}
-	P(short) = \sum_{i = 0}^{i = m} P_i
+	P(short) = \sum_{i = 0}^{m} P_i
 \end{equation}
 in which $i$ is the number of ticks and $m$ is the maximum number of ticks that falls under `short' interval. One would consider this to be noisy, but since the conversion from time to ticks is already a noisy process, this parameter was hard coded.
 
 Using this probability the reaction time was now calculated using the function described in the previous paragraph, with the following rules:
 \begin{itemize}
-	\item if $P(short) < T_1$: use $d_1$ and $m_1$
-	\item else if $P(short) < T_2$: use $d_2$ and $m_2$
-	\item else use $d_3$ and $m_3$
+	\item if $P(short) < T_1$: use $\alpha_1$ and $\beta_1$
+	\item else if $P(short) < T_2$: use $\alpha_2$ and $\beta_2$
+	\item else use $\alpha_3$ and $\beta_3$
 \end{itemize}
 These rules say the following: if there is a low probability on a short interval (lower than the first threshold $T_1$), use the parameters $d_1$ and $m_1$, or in human terms: take the time in preparing for the second signal. If this is not the case and the probability is about half for either short or long intervals ($T_1 \leq P(short) < T_2$), use the parameters $d_2$ and $m_2$ (or `both could happen, just do standard preparation'). Finally if that is not the case, meaning there is a higher probability on short intervals ($T_2 \leq P(short)$), use parameters $d_3$ and $m_3$ (`prepare for the second signal quickly').
 \bigskip
@@ -129,7 +129,19 @@ Figure \ref{5blocks} shows the mean RT of the model as function of foreperiod, g
 The figure and ANOVA results shows that in the first block both of the groups yield approximately the same response times. For the latter four blocks this is not the case however, for these blocks the ANOVA tested significant differences between the two groups. From the figure we can see that group 1, which got the exponential distributions (so mostly short intervals) responded faster to the short intervals, especially in the third and fourth block, in which there is little difference between the response times for short and long foreperiods ($\leq 10 ms$). Group 2, who got the anti-exponential distributions, responded slower in blocks 2-4, especially so when given short foreperiods, but slightly for long foreperiods as well. In the last block we see the two groups having almost the same response times again (although the difference was significant as mentioned above).
 
 \section{Discussion}
-Comparing the results, we can observe that the model approximates the experiment results well in some areas, while in others it does not.
+Comparing the results, we can observe that the model approximates the results of the experiment by Los et al. well in some areas, while in others it does not.
+
+First of all the `standard' situation, in which the distribution of both groups was uniform, seems to be approximated by the model quite well. Both in the experiment as in the model results the foreperiod of 400 ms is responded to in around 360 ms, while that of 1600 ms in around 320 ms. So the `hazardous' aspect of temporal preparation is covered adequately by the model.
+
+Furthermore we can see that especially the third block is approximated quite precisely, although the experiment's data are more linear for the first two foreperiods than that of the model. Since most of the other curves shown in figure \ref{LosFigure} have a less linear nature, it might be that this stems from the dataset of the experiment not being large enough. Another possibility is of course that the response time is in fact more linearly dependent on the foreperiod than the model currently works with. As discussed above however, there has to be an asymptote somewhere down the line, since a human cannot respond instantly, let alone back in time. Therefore a less linear relationship seems more plausible. 
+
+One respect in which the results do differ noteworthy is how the memory is involved. Figures \ref{LosFigure} and \ref{5blocks} show that group 1 of the model follows the pace of group 1 of the experiment somewhat slowly. Whereas in the experiment block 2 shows clearly faster response times for shorter foreperiods, in the model results the same curve is shown as in block 1. However, in block 3 and 4 the model shows the result it should have shown in block 2 and 3 (with the faster response times). In other words, it seems that the declarative memory functionality of group 1 in the model `falls behind', either the long-term memory has too much effect, or the short-term memory does not have enough effect, or both. For group 2 we see this effect to a far less extent (it is only visible in block 4, which has too high response times for short foreperiods). It seems though that this problem might be a matter of `finetuning' the declarative memory, or the parameters with which its influence on the temporal preparation is determined, such as the function parameters $\alpha$ and $\beta$ or the threshold parameters $T_1$ and $T_1$.
+
+There is one aspect that this model cannot imitate. There is no situation in which the model produces response rates for longer foreperiods that are higher than those of shorter foreperiods. Although we hardly see this phenomenon in the data (slightly in figure \ref{LosFigure}, group 1, block 3 and 4) it is a thinkable scenario that, as the time of the foreperiod progresses, attention fades and the temporal preparedness with it. This is however not a phenomenon that was part of the outset of this study. Moreover, in the limited time that is represented by the intervals in this experiment, this phenomenon is not yet a significant feature of cognitive behaviour. When longer intervals would be studied, this would however prove a valid research topic.
+
+Another drawback to the current model is that it has many parameters that have influence on the results. This makes it hard to pinpoint exactly what caused differences in output with the experiment results. Are the parameter settings at fault or is the whole model architecture inherently wrong?
+
+This brings us to our conclusion. Aside from the drawbacks the model suffers from, the model approximates the experiment results quite well. However, it is hard to tell whether the actual cognitive processes are modelled in a sufficient manner. The model is based on the idea that the declarative memory gives an approximation of whether the intervals in the past seconds or minutes have been predominantly long or short. This assumption needs more research to properly assert. 
 
 
 \bibliographystyle{apacite}
