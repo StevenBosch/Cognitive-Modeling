@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 18:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 20:01
 entering extended mode
 **StevenBosch(s1861948)_FinalAssignment_CogMod.tex
 
@@ -223,7 +223,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 
 ]
-<Los1.png, id=11, 396.7322pt x 164.86594pt>
+<Los1.png, id=9, 396.7322pt x 164.86594pt>
 File: Los1.png Graphic file (type png)
  <use Los1.png>
 Package pdftex.def Info: Los1.png used on input line 64.
@@ -241,24 +241,24 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 <5blocks2.png, id=16, 557.08125pt x 598.235pt>
 File: 5blocks2.png Graphic file (type png)
  <use 5blocks2.png>
-Package pdftex.def Info: 5blocks2.png used on input line 124.
+Package pdftex.def Info: 5blocks2.png used on input line 123.
 (pdftex.def)             Requested size: 243.91125pt x 261.928pt.
-
+ [3]
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
-tevenBosch(s1861948)_FinalAssignment_CogMod.bbl" [3 <C:/Users/Steven/Documents/
-GitHub/Cognitive-Modeling/Final assignment/Report/5blocks2.png>]) [4
+tevenBosch(s1861948)_FinalAssignment_CogMod.bbl") [4
 
-]
+ <C:/Users/Steven/Documents/GitHub/Cognitive-Modeling/Final assignment/Report/5
+blocks2.png>]
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
 tevenBosch(s1861948)_FinalAssignment_CogMod.aux") ) 
 Here is how much of TeX's memory you used:
- 3397 strings out of 493921
- 47029 string characters out of 3147279
- 110530 words of memory out of 3000000
+ 3398 strings out of 493921
+ 47036 string characters out of 3147279
+ 109557 words of memory out of 3000000
  6664 multiletter control sequences out of 15000+200000
- 42577 words of font info for 83 fonts, out of 3000000 for 9000
+ 43713 words of font info for 84 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,9n,32p,1010b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,32p,1010b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
@@ -268,7 +268,7 @@ m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /times/utmri8a.pfb>
 Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (4 pages, 11
-4471 bytes).
+7481 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

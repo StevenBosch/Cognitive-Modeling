@@ -9,7 +9,7 @@
 
 \title{Memory Driven Temporal Preparation: A Cognitive Model}
  
-\author{{\large \bf Steven Bosch (s1861948)} \\
+\author{{\large \bf Steven Bosch (s1861948 - s.bosch.8@student.rug.nl)} \\
   Faculty of Mathematics and Natural Sciences}
 
 
@@ -17,7 +17,7 @@
 \maketitle
 
 \begin{abstract}
-Blabla
+A cognitive ability in humans is the ability of cue target interval timing. There are multiple theories on how humans approach such a problem. One such theories encompasses the \textit{hazard function}, which describes that the conditional probability of the occurence of a target event after the presentation of a cue increases over time, given that the event has not yet occurred. Los et al. (2014) developed the \textit{multiple trace theory of temporal preparation} (MTP) that states that every new trial causes a memory trace to be created, which influences the next trial. In an experiment they showed that this seems to be the case indeed. This study discusses a model that incorporates both the hazard function and the MTP. The model approached the experiment results to a certain extent, but falls short in some respects.
 
 \textbf{Keywords:} 
 temporal preparation; cue target interval timing; Hazard function; long term memory
@@ -26,7 +26,7 @@ temporal preparation; cue target interval timing; Hazard function; long term mem
 \section{Introduction}
 The human brain has many traits that we are hardly aware of during our everyday lives, even though these traits have a great impact on our experiences and actions. One such trait is the ability of cue target interval timing. Both consciously and unconsciously this ability is exercised in numerous situations, such as waiting for traffic lights, expecting a sound when something falls or simply expecting the second hand of a clock to move to the next second. What are the cognitive mechanisms behind this ability?
 
-One theory encompasses the \textit{Hazard function}. This function describes that the conditional probability of the occurrence of a target event after the presentation of a cue increases over time given that the event has not yet occurred. While this function has been successfully used to predict interval timing behaviour \cite{Nobre, Vangkilde}, it does not provide an explanation as to the cognitive processes behind it. Moreover it does not take into account memory traces of preceding timing experiences. The past years research began on this basis \cite{Los1, Howard, Taatgen}. Los et al. (2014) developed what they called the \textit{multiple trace theory of temporal preparation} (MTP), in which every new trial causes a memory trace to be created, storing a temporal profile of that trial.This memory trace subsequently contributes to the preparation of subsequent trials. 
+One theory encompasses the \textit{hazard function}. This function describes that the conditional probability of the occurrence of a target event after the presentation of a cue increases over time, given that the event has not yet occurred. While this function has been successfully used to predict interval timing behaviour \cite{Nobre, Vangkilde}, it does not provide an explanation as to the cognitive processes behind it. Moreover it does not take into account memory traces of preceding timing experiences. Over the past years research began on just this basis \cite{Los1, Howard, Taatgen}. Los et al. (2014) developed what they called the \textit{multiple trace theory of temporal preparation} (MTP), in which every new trial causes a memory trace to be created, storing a temporal profile of that trial. This memory trace subsequently contributes to the preparation of subsequent trials. 
 
 A recent experiment by Los et al. indicated that temporal preparation is indeed driven by memory \cite{Los2}. In the experiment different groups of participants were presented with different distributions of foreperiods between temporal cues and target stimuli. Three of these experiments showed a transfer effect of this manipulation in a test phase where all participants received the same uniform distribution, indicating memory influence. 
 
@@ -53,7 +53,7 @@ In the experiment the participants were informed every block about their mean re
 \end{table}
 
 \subsection{Results}
-Figure \ref{LosFigure} shows the results of Los et al.'s experiment. Los et al. themselves applied a mixed Analysis of Variance (ANOVA) on the data of each block, with group and foreperiod as factors. They report a strong main effect of foreperiod in all blocks, minimal $F (1, 62) = 58.63$ and $p < 0.001$. Furthermore they reported a significant main effect of group in block 2, $F (1, 62) = 13.81$, $p < 0.001$ and 3, $F(1, 62) = 13.95$, $p < 0.001$, but not in the other blocks. The interaction between group and foreperiod was not significant in block 1, $F(1, 62) < 1$, but it was in the other four blocks, with blocks 2 and 3 having minimal $F (1, 62) = 69.64$, $p < 0.001$, and blocks 4 and 5 having minimal $F (1, 62) = 13.12$ and $p \leq 0.001$.
+Figure \ref{LosFigure} shows the results of Los et al.'s experiment. Los et al. themselves applied a mixed Analysis of Variance (ANOVA) on the data of each block, with group and foreperiod as factors. They report a strong main effect of foreperiod in all blocks, $F (1, 62) \geq 58.63$ and $p < 0.001$. Furthermore they reported a significant main effect of group in block 2, $F (1, 62) = 13.81$, $p < 0.001$ and 3, $F(1, 62) = 13.95$, $p < 0.001$, but not in the other blocks. The interaction between group and foreperiod was not significant in block 1, $F(1, 62) < 1$, but it was in the other four blocks, with blocks 2 and 3 having $F (1, 62) \geq 69.64$, $p < 0.001$, and blocks 4 and 5 having $F (1, 62) \geq 13.12$ and $p \leq 0.001$.
 
 Figure \ref{LosFigure} shows that for the first uniform distribution, when the participants do not have any prior experience with the experiment yet, their mean RT fore a foreperiod of 400 ms is around 360 ms. It decreases exponentially to around 320 ms for a foreperiod of 1600. In blocks 2 and 3 we see a clear difference between the exponential and anti-exponential distribution. The mean RT for the exponential group decreases greatly for shorter foreperiods, while the opposite happens for the anti-exponential group: the mean RT increases especially for the shorter foreperiods. In the final two blocks we can still see slight remnants of the preceding distributions, with slight differences between the two groups of participants (as discussed the interactino between group and foreperiod was significant in these blocks as well).
 
@@ -118,16 +118,18 @@ These rules say the following: if there is a low probability on a short interval
 \noindent These functions were combined into a model that has to do the same actions as the human participants did. Just as in the Los et al.'s experiment this experiment was run with two groups of 32 `participants' each, with the same foreperiod distributions per group.
 
 \subsection{Results}
-Figure \ref{5blocks} shows the mean RT of the model as function of foreperiod, group and block. We also applied an ANOVA on the data of every block, with foreperiod and group as factors. 
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{5blocks2.png}
 	\caption{Model results of mean response time as a function of group, block and foreperiod.}
 	\label{5blocks}
 \end{figure}
+Figure \ref{5blocks} shows the mean RT of the model as function of foreperiod, group and block. We applied an ANOVA on the data of every block, with foreperiod and group as factors. As with the experiment of Los et al. the ANOVA shows a strong main effect of foreperiod in all blocks, $F(1,64) \geq 86.38$, $p < 0.001$. Apart from the first block, all blocks show a strong main effect of group as well, $F(1,64) \geq 42.91$, $p < 0.001$. Finally apart from the first block, all blocks show a strong main effect of the interaction between group and foreperiod, $F(1,64) \geq 344.4$, $p < 0.001$.
+
+The figure and ANOVA results shows that in the first block both of the groups yield approximately the same response times. For the latter four blocks this is not the case however, for these blocks the ANOVA tested significant differences between the two groups. From the figure we can see that group 1, which got the exponential distributions (so mostly short intervals) responded faster to the short intervals, especially in the third and fourth block, in which there is little difference between the response times for short and long foreperiods ($\leq 10 ms$). Group 2, who got the anti-exponential distributions, responded slower in blocks 2-4, especially so when given short foreperiods, but slightly for long foreperiods as well. In the last block we see the two groups having almost the same response times again (although the difference was significant as mentioned above).
 
 \section{Discussion}
-
+Comparing the results, we can observe that the model approximates the experiment results well in some areas, while in others it does not.
 
 
 \bibliographystyle{apacite}
