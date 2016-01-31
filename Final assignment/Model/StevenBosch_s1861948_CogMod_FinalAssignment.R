@@ -7,13 +7,12 @@ source("time.R", TRUE)
 
 # Experiment setup parameters
 nrGroups = 2     # The number of groups
-nrSubjects = 5   # The number of 'subjects' per group
+nrSubjects = 32   # The number of 'subjects' per group
 nrBlocks = 5      # Number of blocks
 nrTrials = 120   # Number of trials per block
 
 # Subject properties
 baseRT = 320
-# basePenalty = 500
 
 # Foreperiod distributions
 foreperiods = c(400, 800, 1200, 1600)
@@ -104,20 +103,13 @@ for(group in 1:nrGroups){
         
         DM = add.encounter(DM, ticks, curtime)
         
-        # Calculate the reaction time based on a base penalty, the ticks count and the memory influence
-        #if (priorShort < 0.4) {
-        #  reactionTime = basePenalty - exp(-100/((ticks/4)^2)) * 220
-        #} else if (priorShort < 0.6) {
-        #  reactionTime = basePenalty - exp(-10/((ticks/4)^2)) * 220
-        #} else reactionTime = basePenalty - exp(-10/((ticks)^2)) * 220
-        
-        # Calculate the reaction time based on a base Reaction time and the extra time depending
+        # Calculate the reaction time based on a base Reaction time and extra time depending
         # on how "prepared" the subject is
-        if (priorShort < 0.33) {
+        if (priorShort < 0.35) {
           reactionTime = baseRT + exp(-ticks^2.6/2400) * 150
-        } else if (priorShort < 0.60) {
+        } else if (priorShort < 0.55) {
           reactionTime = baseRT + exp(-ticks^2/200) * 150
-        } else reactionTime = baseRT + exp(-ticks) * 150
+        } else reactionTime = baseRT + exp(-ticks^0.5) * 150
         
         # Update the current time with the reaction time and the standard interval
         curtime = curtime + (reactionTime + 1500)/1000
@@ -152,13 +144,13 @@ par(mfrow=c(2,3))
 
 plotDat <- with(data,aggregate(list(reactionTime=reactionTime),list(forePeriod=forePeriod, group=group, block=block),mean))
 
-yrange <- range(plotDat$reactionTime)*c(.95,1.05)
+yrange <- range(plotDat$reactionTime)*c(.95,1.10)
 xrange <- range(300, 1700)
 
 for(block in 1:nrBlocks){
   title = paste("Block ", block)
   plotDatTemp = plotDat[plotDat$block==block,]
-  with(plotDatTemp[plotDatTemp$group==1,],plot(forePeriod,reactionTime,type="b",col=red,lwd=2, pch = 15, ylim=yrange,xlim=xrange,main=paste(title)))
+  with(plotDatTemp[plotDatTemp$group==1,],plot(forePeriod,reactionTime,type="b",col=red,lwd=2, pch = 15, ylim=yrange,xlim=xrange,main=paste(title), xlab = "Foreperiod (ms)", ylab = "Response time (ms)"))
   with(plotDatTemp[plotDatTemp$group==2,],lines(forePeriod,reactionTime,type="b",col=black,lwd=2, pch = 17, ylim=yrange,xlim=xrange))
   legend("topleft", legend = c("Group 1", "Group 2"), col = c("red", "black"), lwd=1, 
          pch=c(15,17))

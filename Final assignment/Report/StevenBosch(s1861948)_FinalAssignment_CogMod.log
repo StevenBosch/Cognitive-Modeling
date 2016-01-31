@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  30 JAN 2016 22:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 12:22
 entering extended mode
 **StevenBosch(s1861948)_FinalAssignment_CogMod.tex
 
@@ -183,30 +183,34 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
-
-<5blocks2.png, id=1, 547.04375pt x 597.23125pt>
-File: 5blocks2.png Graphic file (type png)
- <use 5blocks2.png>
-Package pdftex.def Info: 5blocks2.png used on input line 44.
-(pdftex.def)             Requested size: 243.91125pt x 266.29106pt.
-
-("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
-tevenBosch(s1861948)_FinalAssignment_CogMod.bbl" [1{C:/ProgramData/MiKTeX/2.9/p
-dftex/config/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-
- <C:/Users/Steven/Documents/GitHub/Cognitive-Modeling/Final assignment/Report/5
-blocks2.png>]) [2
 
 ]
+<Los1.png, id=8, 396.7322pt x 164.86594pt>
+File: Los1.png Graphic file (type png)
+ <use Los1.png>
+Package pdftex.def Info: Los1.png used on input line 60.
+(pdftex.def)             Requested size: 243.91125pt x 101.36049pt.
+
+<5blocks2.png, id=9, 557.08125pt x 598.235pt>
+File: 5blocks2.png Graphic file (type png)
+ <use 5blocks2.png>
+Package pdftex.def Info: 5blocks2.png used on input line 73.
+(pdftex.def)             Requested size: 243.91125pt x 261.928pt.
+
+("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
+tevenBosch(s1861948)_FinalAssignment_CogMod.bbl") [2 <C:/Users/Steven/Documents
+/GitHub/Cognitive-Modeling/Final assignment/Report/Los1.png> <C:/Users/Steven/D
+ocuments/GitHub/Cognitive-Modeling/Final assignment/Report/5blocks2.png>]
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
 tevenBosch(s1861948)_FinalAssignment_CogMod.aux") ) 
 Here is how much of TeX's memory you used:
- 1849 strings out of 493921
- 25203 string characters out of 3147279
- 79560 words of memory out of 3000000
- 5148 multiletter control sequences out of 15000+200000
+ 1856 strings out of 493921
+ 25281 string characters out of 3147279
+ 82576 words of memory out of 3000000
+ 5154 multiletter control sequences out of 15000+200000
  25100 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,9n,21p,950b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -214,10 +218,10 @@ Here is how much of TeX's memory you used:
 /fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (2 pages, 60
-546 bytes).
+Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (2 pages, 77
+857 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
+ 25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
