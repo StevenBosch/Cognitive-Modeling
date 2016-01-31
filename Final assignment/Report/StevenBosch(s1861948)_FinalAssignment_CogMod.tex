@@ -5,6 +5,7 @@
 \usepackage{apacite}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{listings}
 
 \title{Memory Driven Temporal Preparation: A Cognitive Model}
  
@@ -41,7 +42,7 @@ In the experiment the participants were informed every block about their mean re
 
 \begin{table}
 	\centering
-	\caption{Successive foreperiod distributions across blocks for group 1 and 2 (Uni \= uniform, Exp \= exponential, Anti-exp \= anti-exponential).}
+	\caption{Successive foreperiod distributions across blocks for group 1 and 2 (Uni $=$ uniform, Exp $=$ exponential, Anti-exp $=$ anti-exponential).}
 	\begin{tabular}{c|c|c|c|c|c}
 		Block & 1 & 2 & 3 & 4 & 5 \\
 		\hline
@@ -69,7 +70,11 @@ As discussed in the introduction, from these results it appears that the cogniti
 \subsection{Method}
 The model consists of a timing and memory function, which were built upon functions that are proposed earlier in the literature, and two components specifically designed for the current timing task. 
 
-The timing function is modelled by \citet{Taatgen1} as an Act-R module, the `temporal module'.\footnote{Act-R is a cognitive architecture, see http://act-r.psy.cmu.edu/.}. This module models the idea that people internally measure an interval in number of ticks, which are counted with increasingly long intervals. Furthermore the model uses a memory function that is proposed in \citet{Taatgen}, in which memories are stored as encounters of a specific chunk in the declarative memory. Subsequently the activation of every chunk their prior probabilities are calculated (the probability of retrieving the concerned memory).
+The timing function is modelled by \citet{Taatgen1} as an Act-R module, the `temporal module'.\footnote{Act-R is a cognitive architecture, see http://act-r.psy.cmu.edu/.}. This module models the idea that people internally measure an interval in number of ticks, which are counted with increasingly long intervals. Furthermore the model uses a declarative memory function (DM-module) that is proposed in \citet{Taatgen}, in which memories are stored as encounters of a specific chunk in the declarative memory. Subsequently the activation of every chunk is calculated to determine how `fresh' in memory it is, according to the following function:
+\begin{equation}
+	A(T) = log(\sum_{encs}(t - t_{enc})^{-d}))
+\end{equation}
+Here $t$ is the current time, $t_{enc}$ is the time when an encounter of that specific chunk is created and $d$ is a constant.
 
 For this specific cue target interval timing problem there were two more main components that needed to be modelled, in order for the model to produce the results generated in the experiment:
 \begin{enumerate}
@@ -92,8 +97,28 @@ The implementation of the Hazard function used in the model is the following:
 Here $R$ is the response time, $R_b$ the base response, maxDelay the maximum number of milliseconds a response can take, ticks the number of ticks counted during the foreperiod, and $d$ and $m$ parameters that depend on memory (see the next paragraph). This study uses a base response of 320 ms and a maximum delay of 150 ms, meaning that all of the responses fall within 320 and 470 ms. The exponential factor in the function makes sure that a longer foreperiod is always responded to more quickly than a shorter one. It depends on $d$ and $m$ what the magnitude of this difference is.
 
 \paragraph{Memory influence}
-From the results of the Los et al. experiment it appears that memory has a direct influence on the preparation rate for the second signal. 
+From the results of the Los et al. experiment it appears that memory has a direct influence on the preparation rate for the second signal, so this had to implemented in the model as well. As we saw from the results, with more short intervals in memory a participant was prepared more quickly and responded faster to (primarily the short) intervals, with more long intervals in memory the participant would take longer to be prepared, which not only affected the short intervals, but even the long intervals (see figure \ref{LosFigure}, the graphs of the second and third block). One explanation for this phenomenon is that the participant unconsciously determines the probabilities of a trial being a short or long interval dependent on the distribution of intervals it has in its memory. Dependent on this estimate the participant would either prepare himself for a short interval or `wait a while' before there was a need to prepare himself. 
 
+The participants probably did not experience a sense of exact knowledge concerning the distribution of foreperiods in the block they were in, but they probably did have a more general sense of the foreperiods being predominantly shorter or longer in their past experiences. In this model it is assumed that these were the two options, together with `being about equal', that the human cognition assigned to the foreperiod distribution: predominantly short, about equal, or predominantly long.
+This is modelled in the following way. Using the activation of the chunks in the DM-module (as described above), the prior probability of every encountered foreperiod (in `ticks') is calculated, based on all the encounters per foreperiod. Since the foreperiods are converted to ticks, which is a noisy process, multiple chunks can represent the same foreperiod. Using these prior probabilities, a combined probability on all the shorter foreperiod encounters is calculated as:
+\begin{equation}
+	P(short) = \sum_{i = 0}^{i = m} P_i
+\end{equation}
+in which $i$ is the number of ticks and $m$ is the maximum number of ticks that falls under `short' interval. One would consider this to be noisy, but since the conversion from time to ticks is already a noisy process, this parameter was hard coded.
+
+Using this probability the reaction time was now calculated using the function described in the previous paragraph, with the following rules:
+\begin{itemize}
+	\item if $P(short) < T_1$: use $d_1$ and $m_1$
+	\item else if $P(short) < T_2$: use $d_2$ and $m_2$
+	\item else use $d_3$ and $m_3$
+\end{itemize}
+These rules say the following: if there is a low probability on a short interval (lower than the first threshold $T_1$), use the parameters $d_1$ and $m_1$, or in human terms: take the time in preparing for the second signal. If this is not the case and the probability is about half for either short or long intervals ($T_1 \leq P(short) < T_2$), use the parameters $d_2$ and $m_2$ (or `both could happen, just do standard preparation'). Finally if that is not the case, meaning there is a higher probability on short intervals ($T_2 \leq P(short)$), use parameters $d_3$ and $m_3$ (`prepare for the second signal quickly').
+\bigskip
+
+\noindent These functions were combined into a model that has to do the same actions as the human participants did. Just as in the Los et al.'s experiment this experiment was run with two groups of 32 `participants' each, with the same foreperiod distributions per group.
+
+\subsection{Results}
+Figure \ref{5blocks} shows the mean RT of the model as function of foreperiod, group and block. We also applied an ANOVA on the data of every block, with foreperiod and group as factors. 
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{5blocks2.png}

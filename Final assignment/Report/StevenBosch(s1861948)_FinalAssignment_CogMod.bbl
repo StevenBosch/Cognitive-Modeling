@@ -130,8 +130,12 @@ Taatgen, N.%
 \newblock
 \APACrefYearMonthDay{2004}{}{}.
 \newblock
-\APACrefbtitle {Time Perception: Beyond Simple Interval Estimation.} {Time
-  perception: Beyond simple interval estimation.}
+{\BBOQ}\APACrefatitle {Time Perception: Beyond Simple Interval Estimation}
+  {Time perception: Beyond simple interval estimation}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the International Conference on Cognitive
+  Modelling.} {Proceedings of the international conference on cognitive
+  modelling.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
