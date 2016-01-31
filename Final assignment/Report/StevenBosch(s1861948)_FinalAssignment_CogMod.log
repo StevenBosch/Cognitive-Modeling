@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 23:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 23:14
 entering extended mode
 **StevenBosch(s1861948)_FinalAssignment_CogMod.tex
 
@@ -235,13 +235,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
  [2 <C:/Users/Steven/Documents/GitHub/Cognitive-Modeling/Final assignment/Repor
 t/Los1.png>]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 112.
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 111.
 
 
 <5blocks2.png, id=16, 557.08125pt x 598.235pt>
 File: 5blocks2.png Graphic file (type png)
  <use 5blocks2.png>
-Package pdftex.def Info: 5blocks2.png used on input line 124.
+Package pdftex.def Info: 5blocks2.png used on input line 123.
 (pdftex.def)             Requested size: 243.91125pt x 261.928pt.
  [3]
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
@@ -258,7 +258,7 @@ Here is how much of TeX's memory you used:
  6664 multiletter control sequences out of 15000+200000
  45332 words of font info for 89 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,9n,32p,1209b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,32p,1209b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
@@ -268,7 +268,7 @@ m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
 /times/utmri8a.pfb>
 Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (5 pages, 12
-3898 bytes).
+3807 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
