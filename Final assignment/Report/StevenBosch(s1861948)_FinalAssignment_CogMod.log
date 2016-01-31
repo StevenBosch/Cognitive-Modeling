@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 14:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.15)  31 JAN 2016 17:14
 entering extended mode
 **StevenBosch(s1861948)_FinalAssignment_CogMod.tex
 
@@ -111,27 +111,36 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citeauthor on input line 712.
+LaTeX Info: Redefining \citeyear on input line 735.
+\c@NAT@ctr=\count89
+)
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
 tevenBosch(s1861948)_FinalAssignment_CogMod.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 14
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 15
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-\c@maskedRefs=\count89
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+\c@maskedRefs=\count90
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\apacite\english.apc"
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -140,49 +149,49 @@ LaTeX Info: Redefining \BHBI on input line 130.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count90
+\scratchcounter=\count91
 \scratchdimen=\dimen105
 \scratchbox=\box26
-\nofMPsegments=\count91
-\nofMParguments=\count92
+\nofMPsegments=\count92
+\nofMParguments=\count93
 \everyMPshowfont=\toks15
-\MPscratchCnt=\count93
+\MPscratchCnt=\count94
 \MPscratchDim=\dimen106
-\MPnumerator=\count94
-\makeMPintoPDFobject=\count95
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
 \everyMPtoPDFconversion=\toks16
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 15
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 16
 .
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptmcm.fd"
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 15
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 16
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptmcm.fd"
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 15
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 16
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxpsycm.fd"
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 24.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
@@ -191,36 +200,33 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 <Los1.png, id=11, 396.7322pt x 164.86594pt>
 File: Los1.png Graphic file (type png)
  <use Los1.png>
-Package pdftex.def Info: Los1.png used on input line 62.
+Package pdftex.def Info: Los1.png used on input line 63.
 (pdftex.def)             Requested size: 243.91125pt x 101.36049pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-
-<5blocks2.png, id=12, 557.08125pt x 598.235pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
+ [2 <C:/Users/Steven/Documents/GitHub/Cognitive-Modeling/Final assignment/Repor
+t/Los1.png>]
+<5blocks2.png, id=15, 557.08125pt x 598.235pt>
 File: 5blocks2.png Graphic file (type png)
  <use 5blocks2.png>
-Package pdftex.def Info: 5blocks2.png used on input line 85.
+Package pdftex.def Info: 5blocks2.png used on input line 99.
 (pdftex.def)             Requested size: 243.91125pt x 261.928pt.
 
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
-tevenBosch(s1861948)_FinalAssignment_CogMod.bbl" [2 <C:/Users/Steven/Documents/
-GitHub/Cognitive-Modeling/Final assignment/Report/Los1.png> <C:/Users/Steven/Do
-cuments/GitHub/Cognitive-Modeling/Final assignment/Report/5blocks2.png>])
-[3
-
-]
+tevenBosch(s1861948)_FinalAssignment_CogMod.bbl") [3 <C:/Users/Steven/Documents
+/GitHub/Cognitive-Modeling/Final assignment/Report/5blocks2.png>]
 ("C:\Users\Steven\Documents\GitHub\Cognitive-Modeling\Final assignment\Report\S
 tevenBosch(s1861948)_FinalAssignment_CogMod.aux") ) 
 Here is how much of TeX's memory you used:
- 1881 strings out of 493921
- 25611 string characters out of 3147279
- 84576 words of memory out of 3000000
- 5175 multiletter control sequences out of 15000+200000
- 36959 words of font info for 72 fonts, out of 3000000 for 9000
+ 2207 strings out of 493921
+ 29522 string characters out of 3147279
+ 90498 words of memory out of 3000000
+ 5489 multiletter control sequences out of 15000+200000
+ 41722 words of font info for 80 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,9n,21p,1113b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,24p,950b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
@@ -229,7 +235,7 @@ y10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/times/utmri8a.pfb>
 Output written on StevenBosch(s1861948)_FinalAssignment_CogMod.pdf (3 pages, 10
-4662 bytes).
+8310 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

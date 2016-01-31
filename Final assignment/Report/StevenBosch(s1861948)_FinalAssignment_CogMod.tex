@@ -4,6 +4,7 @@
 \usepackage{pslatex}
 \usepackage{apacite}
 \usepackage{graphicx}
+\usepackage{natbib}
 
 \title{Memory Driven Temporal Preparation: A Cognitive Model}
  
@@ -66,19 +67,32 @@ As discussed in the introduction, from these results it appears that the cogniti
 
 \section{Model}
 \subsection{Method}
-There were two main components in cue target interval timing that needed to be modelled, in order for the model to produce the results generated in the experiment:
+The model consists of a timing and memory function, which were built upon functions that are proposed earlier in the literature, and two components specifically designed for the current timing task. 
+
+The timing function is modelled by \citet{Taatgen1} as an Act-R module, the `temporal module'.\footnote{Act-R is a cognitive architecture, see http://act-r.psy.cmu.edu/.}. This module models the idea that people internally measure an interval in number of ticks, which are counted with increasingly long intervals. Furthermore the model uses a memory function that is proposed in \citet{Taatgen}, in which memories are stored as encounters of a specific chunk in the declarative memory. Subsequently the activation of every chunk their prior probabilities are calculated (the probability of retrieving the concerned memory).
+
+For this specific cue target interval timing problem there were two more main components that needed to be modelled, in order for the model to produce the results generated in the experiment:
 \begin{enumerate}
-	\item Some sort of hazard function
+	\item A hazard function
 	\item Memory influence on the temporal preparation
 \end{enumerate}
-(1) Is necessary, because the first block in the experiment clearly showed that without memory of past cue target timing experiences, the mean response times decrease logarithmically as the foreperiod becomes longer, down to a certain threshold.\footnote{Note that this study only discusses the time intervals discussed in Los et al.'s paper. Different mechanisms might come into play for shorter or longer intervals.} The Hazard function can be applied here: the longer it takes before the second signal is shown, the higher the probability becomes that it will come at the next millisecond. The fact that the plots show some sort of negative logarithmic function might be the result of a number of things. First, there obviously is a limit to how fast a human being can respond, so it is logical that there is some kind of asymptote the response times approach as the participants become more prepared. Second, a participant cannot expect the experiment to last forever. This makes it logical that the first milliseconds its expectation increases (so its response time decreases) at a higher rate than at a later time.
+Let us discuss each of these separately.
 
-It is also necessary to address (2), as is discussed in the previous section. From the graphs it appears that memory has a direct influence on 
+\paragraph{The hazard function}
+The hazard function is necessary, because the first block in the experiment clearly showed that without memory of past cue target timing experiences, the mean response times decrease logarithmically as the foreperiod becomes longer, down to a certain threshold.\footnote{Note that this study only discusses the time intervals discussed in Los et al.'s paper. Different mechanisms might come into play for shorter or longer intervals.} The Hazard function can be applied here: the longer it takes before the second signal is shown, the higher the probability becomes that it will come at the next millisecond. 
 
-Now let us discuss both of the implementations.
+The fact that the plots show some sort of negative logarithmic function might be the result of a number of things. First, there is a limit to how fast a human being can respond: he has to observe the signal first, after which this image has to be processed and recognized. Finally the procedural step has to be taken to press the (right) button. Since all of these processes take time, it is logical that there is an asymptote that the response times approach as the participants become more prepared. They can never be faster than a certain speed. Second, a participant cannot expect the experiment to last forever. This makes it logical that the first milliseconds its expectation increases (so its response time decreases) at a higher rate than at a later time. 
 
-\paragraph{1. Hazard function}
+Finally, one last assumption is made in modelling the hazard function: there is also a maximum response time. No matter how ill-prepared a participant may be for the second signal, he will still respond within a certain amount of time, unless of course he is distracted in one way or another.
 
+The implementation of the Hazard function used in the model is the following:
+\begin{equation}
+	R = R_b + maxDelay * e^{-\frac{ticks^d}{m}}
+\end{equation}
+Here $R$ is the response time, $R_b$ the base response, maxDelay the maximum number of milliseconds a response can take, ticks the number of ticks counted during the foreperiod, and $d$ and $m$ parameters that depend on memory (see the next paragraph). This study uses a base response of 320 ms and a maximum delay of 150 ms, meaning that all of the responses fall within 320 and 470 ms. The exponential factor in the function makes sure that a longer foreperiod is always responded to more quickly than a shorter one. It depends on $d$ and $m$ what the magnitude of this difference is.
+
+\paragraph{Memory influence}
+From the results of the Los et al. experiment it appears that memory has a direct influence on the preparation rate for the second signal. 
 
 \begin{figure}
 	\centering

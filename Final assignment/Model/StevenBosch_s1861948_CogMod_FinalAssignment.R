@@ -13,6 +13,7 @@ nrTrials = 120   # Number of trials per block
 
 # Subject properties
 baseRT = 320
+maxDelay = 150
 
 # Foreperiod distributions
 foreperiods = c(400, 800, 1200, 1600)
@@ -106,10 +107,10 @@ for(group in 1:nrGroups){
         # Calculate the reaction time based on a base Reaction time and extra time depending
         # on how "prepared" the subject is
         if (priorShort < 0.35) {
-          reactionTime = baseRT + exp(-ticks^2.6/2400) * 150
+          reactionTime = baseRT + exp(-ticks^2.6/2400) * maxDelay
         } else if (priorShort < 0.55) {
-          reactionTime = baseRT + exp(-ticks^2/200) * 150
-        } else reactionTime = baseRT + exp(-ticks^0.5) * 150
+          reactionTime = baseRT + exp(-ticks^2/200) * maxDelay
+        } else reactionTime = baseRT + exp(-ticks^0.5) * maxDelay
         
         # Update the current time with the reaction time and the standard interval
         curtime = curtime + (reactionTime + 1500)/1000

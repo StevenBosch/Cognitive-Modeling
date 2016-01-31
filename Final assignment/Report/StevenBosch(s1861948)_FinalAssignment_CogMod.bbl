@@ -117,6 +117,30 @@ Taatgen%
 Taatgen%
 \ \BBA {} van Rijn%
 }{%
+{\protect \APACyear {2004}}%
+}]{%
+Taatgen1}
+\APACinsertmetastar {%
+Taatgen1}%
+\begin{APACrefauthors}%
+Taatgen, N.%
+\BCBT {}\ \BBA {} van Rijn, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+\APACrefbtitle {Time Perception: Beyond Simple Interval Estimation.} {Time
+  perception: Beyond simple interval estimation.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Taatgen%
+\ \BBA {} van Rijn%
+}{%
+Taatgen%
+\ \BBA {} van Rijn%
+}{%
 {\protect \APACyear {2011}}%
 }]{%
 Taatgen}
